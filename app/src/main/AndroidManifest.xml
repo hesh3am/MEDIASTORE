@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.hesham.mediastore">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/mediastore"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/mediastore"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MediaStoreActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".AdditionActivity"
+            android:label="@string/addproduct"
+            android:parentActivityName=".MediaStoreActivity"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MediaStoreActivity" />
+        </activity>
+        <activity
+            android:name=".ScreenActivity"
+            android:label="@string/product_view"
+            android:parentActivityName=".MediaStoreActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MediaStoreActivity" />
+        </activity>
+        <provider
+            android:name=".data.ProductProvider"
+            android:authorities="com.example.hesham.mediastore"
+            android:exported="false" />
+    </application>
+</manifest>
